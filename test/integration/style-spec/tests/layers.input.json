@@ -192,6 +192,26 @@
       }
     },
     {
+      "id": "hillshade-slope-classes",
+      "type": "hillshade",
+      "source": "raster-dem",
+      "paint": {
+        "hillshade-method": "slope-classes",
+        "hillshade-slope-breaks": [25, 35],
+        "hillshade-slope-colors": ["transparent", "yellow", "red"]
+      }
+    },
+    {
+      "id": "hillshade-slope-classes-invalid",
+      "type": "hillshade",
+      "source": "raster-dem",
+      "paint": {
+        "hillshade-method": "slope-classes",
+        "hillshade-slope-breaks": ["steep"],
+        "hillshade-slope-colors": ["not-a-color"]
+      }
+    },
+    {
       "id": "redundant-resampling",
       "type": "raster",
       "source": "raster",

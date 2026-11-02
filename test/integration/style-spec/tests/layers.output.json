@@ -130,8 +130,18 @@
     "line": 191
   },
   {
-    "message": "layers[23]: layer \"redundant-resampling\" redundantly specifies \"resampling\" and \"raster-resampling\" paint properties, but only one is allowed. It is advised to use \"resampling\".",
+    "message": "layers[24].paint.hillshade-slope-breaks[0]: number expected, string found",
     "severity": "error",
-    "line": 199
+    "line": 210
+  },
+  {
+    "message": "layers[24].paint.hillshade-slope-colors[0]: color expected, \"not-a-color\" found",
+    "severity": "error",
+    "line": 211
+  },
+  {
+    "message": "layers[25]: layer \"redundant-resampling\" redundantly specifies \"resampling\" and \"raster-resampling\" paint properties, but only one is allowed. It is advised to use \"resampling\".",
+    "severity": "error",
+    "line": 219
   }
 ]

@@ -9108,10 +9108,13 @@
         },
         "multidirectional": {
           "doc": "Hillshade with multiple illumination directions. Uses the basic hillshade model with multiple independent light sources."
+        },
+        "slope-classes": {
+          "doc": "Slope classes instead of shading: the slope of each pixel, in degrees, after one 3 x 3 mean of the heights (relief zoom 14 and finer; none on a coarser relief), from Horn's method with the ground spacing of the pixel's row, is compared with `hillshade-slope-breaks` and drawn with the matching `hillshade-slope-colors`. Illumination properties are ignored."
         }
       },
       "default": "standard",
-      "doc": "The hillshade algorithm to use, one of `standard`, `basic`, `combined`, `igor`, or `multidirectional`.\n![Visual comparison of standard, basic, igor, combined, and multidirectional hillshade-method](assets/hillshade_methods.png)",
+      "doc": "The hillshade algorithm to use, one of `standard`, `basic`, `combined`, `igor`, `multidirectional`, or `slope-classes`.\n![Visual comparison of standard, basic, igor, combined, and multidirectional hillshade-method](assets/hillshade_methods.png)",
       "sdk-support": {
         "basic functionality": {
           "js": "5.5.0",
@@ -9122,6 +9125,54 @@
           "js": "5.6.0",
           "android": "13.7.1",
           "ios": "7.0.0"
+        }
+      },
+      "expression": {
+        "interpolated": false,
+        "parameters": [
+          "zoom"
+        ]
+      },
+      "property-type": "data-constant"
+    },
+    "hillshade-slope-breaks": {
+      "type": "numberArray",
+      "default": [30, 35, 40, 45],
+      "minimum": 0,
+      "maximum": 90,
+      "doc": "The slope breaks, in degrees, of the `slope-classes` method, in increasing order: a pixel at or above the n-th break takes the n-th class above the first. Up to four breaks.",
+      "requires": [
+        {
+          "hillshade-method": "slope-classes"
+        }
+      ],
+      "transition": false,
+      "sdk-support": {
+        "basic functionality": {
+          "js": "TBD"
+        }
+      },
+      "expression": {
+        "interpolated": false,
+        "parameters": [
+          "zoom"
+        ]
+      },
+      "property-type": "data-constant"
+    },
+    "hillshade-slope-colors": {
+      "type": "colorArray",
+      "default": ["rgba(0,0,0,0)", "rgba(242,214,58,0.55)", "rgba(230,118,28,0.6)", "rgba(78,55,190,0.6)", "rgba(34,22,44,0.68)"],
+      "doc": "The colors of the slope classes of the `slope-classes` method: one more than the breaks, from the class below the first break.",
+      "requires": [
+        {
+          "hillshade-method": "slope-classes"
+        }
+      ],
+      "transition": false,
+      "sdk-support": {
+        "basic functionality": {
+          "js": "TBD"
         }
       },
       "expression": {

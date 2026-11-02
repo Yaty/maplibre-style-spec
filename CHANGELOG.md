@@ -1,6 +1,7 @@
 ## main
 ### ✨ Features and improvements
 - _...Add new stuff here..._
+- Add the `slope-classes` value of `hillshade-method`, with `hillshade-slope-breaks` and `hillshade-slope-colors`, to draw classified slope angles from a `raster-dem` source
 
 ### 🐞 Bug fixes
 - _...Add new stuff here..._
